@@ -30,11 +30,12 @@ src/
 
 ## 🚀 Comandos
 
-| Comando       | Descripción                         |
-| :------------ | :---------------------------------- |
-| `bun dev`     | Inicia servidor de desarrollo       |
-| `bun build`   | Construye la versión de producción  |
-| `bun preview` | Previsualiza la build de producción |
+| Comando           | Descripción                           |
+| :---------------- | :------------------------------------ |
+| `bun install`     | Instala las dependencias del proyecto |
+| `bun run dev`     | Inicia servidor de desarrollo         |
+| `bun run build`   | Construye la versión de producción    |
+| `bun run preview` | Previsualiza la build de producción   |
 
 ## 🛠️ Stack Técnico
 
