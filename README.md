@@ -1,43 +1,43 @@
-# Astro Starter Kit: Minimal
+# Landing Responsive con Astro
 
-```sh
-bun create astro@latest -- --template minimal
+Una landing page moderna y responsive construida con **Astro** y **Tailwind CSS**, con énfasis en semántica HTML5, mobile-first y rendimiento.
+
+## 🎯 Características
+
+- **Responsive Design**: Múltiples breakpoints (sm, md, lg, xl) adaptados a cualquier dispositivo.
+- **Componentes Reutilizables**: Arquitectura modular con componentes Astro independientes.
+- **Modal Interactivo**: Botón CTA con modal emergente y animación de flecha.
+- **Optimizaciones**: SSG, lazy loading en imágenes, código CSS mínimo.
+- **Accesibilidad**: Semántica HTML5, atributos alt, contraste de colores.
+
+## 📁 Estructura del Proyecto
+
+```
+src/
+├── layouts/
+│   └── MainLayout.astro       # Layout base con metadatos
+├── components/
+│   ├── Hero.astro             # Sección héroe con imagen
+│   ├── Card.astro             # Componente de tarjeta
+│   ├── Grid.astro             # Grid responsive
+│   ├── Button.astro           # Botón CTA reutilizable
+│   └── Footer.astro           # Pie de página
+├── pages/
+│   └── index.astro            # Página principal
+└── styles/
+    └── global.css             # Estilos globales (Tailwind)
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Comandos
 
-## 🚀 Project Structure
+| Comando       | Descripción                         |
+| :------------ | :---------------------------------- |
+| `bun dev`     | Inicia servidor de desarrollo       |
+| `bun build`   | Construye la versión de producción  |
+| `bun preview` | Previsualiza la build de producción |
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🛠️ Stack Técnico
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Framework**: Astro 6.1.4
+- **Estilos**: Tailwind CSS 4.2.2
+- **Package Manager**: Bun
