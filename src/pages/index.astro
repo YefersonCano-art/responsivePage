@@ -1,17 +1,104 @@
 ---
-import "../styles/global.css";
+import MainLayout from "../layouts/MainLayout.astro";
+import Hero from "../components/Hero.astro";
+import Grid from "../components/Grid.astro";
+import Card from "../components/Card.astro";
+import Button from "../components/Button.astro";
+import Footer from "../components/Footer.astro";
+
+const cards = [
+  {
+    title: "Accesorios personales",
+    imageUrl: "https://picsum.photos/id/26/720/560",
+    alt: "Escritorio con Accesorios personales",
+  },
+  {
+    title: "Viaje en el desierto",
+    imageUrl: "https://picsum.photos/id/196/720/560",
+    alt: "Carro en un desierto",
+  },
+  {
+    title: "Taraxacum officinale",
+    imageUrl: "https://picsum.photos/id/239/720/560",
+    alt: "Flor diente de leon",
+  },
+  {
+    title: "Crea tipografía legible",
+    imageUrl: "https://picsum.photos/id/30/720/560",
+    alt: "Vaso de ceramica",
+  },
+  {
+    title: "Escala entre breakpoints",
+    imageUrl: "https://picsum.photos/id/43/720/560",
+    alt: "Skyline de ciudad visto desde una azotea",
+  },
+  {
+    title: "Despliega y valida más rápido",
+    imageUrl: "https://picsum.photos/id/48/720/560",
+    alt: "Protatil macbook",
+  },
+];
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+<MainLayout
+  title="Landing responsive con Astro"
+  description="Landing page mobile-first creada con Astro y Tailwind CSS."
+>
+  <Hero
+    title="Landing responsive con acabado premium"
+    description="Una demostración técnica de layouts modernos y optimización de assets. Código limpio, semántica HTML5 y una jerarquía visual diseñada para guiar al usuario hacia la acción final."
+    imageUrl="https://picsum.photos/id/1011/1920/1080"
+    imageAlt="Persona en un bote, paisaje de lago con montañas al fondo"
+  />
+
+  <main class="mx-auto w-full max-w-6xl px-6 pt-10 sm:px-8 lg:px-10">
+    <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">
+      Módulos destacados
+    </h2>
+    <p class="mt-2 max-w-2xl text-sm text-slate-600 sm:text-base">
+      Una colección práctica de secciones diseñada para validar el
+      comportamiento responsive en vistas de móvil, tablet y escritorio.
+    </p>
+
+    <div class="mt-12">
+      <Grid>
+        {
+          cards.map((card) => (
+            <Card title={card.title} imageUrl={card.imageUrl} alt={card.alt} />
+          ))
+        }
+      </Grid>
+    </div>
+  </main>
+
+  <section
+    class="mx-auto flex w-full max-w-6xl justify-center px-6 pb-4 sm:px-8 lg:px-10"
+  >
+    <div id="modal-btn" class="relative">
+      <Button label="Haz clic aquí" href="#" />
+      <div
+        id="modal"
+        class="absolute left-1/2 -translate-x-1/2 top-full mt-3 hidden bg-slate-900 rounded-lg shadow-lg px-6 py-4 text-sm text-stone-50 border border-slate-200 whitespace-nowrap"
+      >
+        <div class="absolute left-1/2 -translate-x-1/2 -top-2 w-4 h-4 bg-slate-900 border-t border-l border-slate-200 rotate-45"></div>
+        Gracias por hacer clic
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const container = document.getElementById("modal-btn") as HTMLElement;
+    const btn = container.querySelector("a") as HTMLElement;
+    const modal = document.getElementById("modal") as HTMLElement;
+
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.classList.remove("hidden");
+      setTimeout(() => {
+        modal.classList.add("hidden");
+      }, 2000);
+    });
+  </script>
+
+  <Footer />
+</MainLayout>
