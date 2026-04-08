@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Hero from "../components/Hero.astro";
+import Nav from "../components/Nav.astro";
 import Grid from "../components/Grid.astro";
 import Card from "../components/Card.astro";
 import Button from "../components/Button.astro";
@@ -44,9 +45,11 @@ const cards = [
   title="Landing responsive con Astro"
   description="Landing page mobile-first creada con Astro y Tailwind CSS."
 >
+  <Nav title="Landing responsive con acabado premium" />
+
   <Hero
-    title="Landing responsive con acabado premium"
-    description="Una demostración técnica de layouts modernos y optimización de assets. Código limpio, semántica HTML5 y una jerarquía visual diseñada para guiar al usuario hacia la acción final."
+    tags={["Semántico", "Optimizado", "Limpio"]}
+    description="Diseñamos experiencias modernas con estructura limpia, semántica sólida y una jerarquía visual pensada para guiar a cada usuario hacia la acción principal."
     imageUrl="https://picsum.photos/id/1011/1920/1080"
     imageAlt="Persona en un bote, paisaje de lago con montañas al fondo"
   />
@@ -80,7 +83,10 @@ const cards = [
         id="modal"
         class="absolute left-1/2 -translate-x-1/2 top-full mt-3 hidden bg-slate-900 rounded-lg shadow-lg px-6 py-4 text-sm text-stone-50 border border-slate-200 whitespace-nowrap"
       >
-        <div class="absolute left-1/2 -translate-x-1/2 -top-2 w-4 h-4 bg-slate-900 border-t border-l border-slate-200 rotate-45"></div>
+        <div
+          class="absolute left-1/2 -translate-x-1/2 -top-2 w-4 h-4 bg-slate-900 border-t border-l border-slate-200 rotate-45"
+        >
+        </div>
         Gracias por hacer clic
       </div>
     </div>

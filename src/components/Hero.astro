@@ -1,12 +1,12 @@
 ---
 interface Props {
-  title: string;
+  tags: string[];
   description: string;
   imageUrl: string;
   imageAlt: string;
 }
 
-const { title, description, imageUrl, imageAlt } = Astro.props;
+const { tags, description, imageUrl, imageAlt } = Astro.props;
 ---
 
 <header class="relative h-[50vh] md:h-[62vh] min-h-105 w-full overflow-hidden">
@@ -21,15 +21,21 @@ const { title, description, imageUrl, imageAlt } = Astro.props;
   <div
     class="relative mx-auto flex h-full w-full max-w-6xl items-end px-6 pb-12 sm:px-8 md:pb-16 lg:px-10"
   >
-    <div class="max-w-2xl text-stone-50">
-      <h1 class="text-3xl font-semibold sm:text-4xl md:text-5xl lg:text-6xl">
-        {title}
-      </h1>
-      <p
-        class="mt-4 max-w-xl text-sm text-stone-100/90 sm:text-base md:text-lg"
-      >
-        {description}
-      </p>
+    <div class="max-w-4xl text-stone-50">
+      <div class="flex flex-col gap-4 md:flex-row md:items-center md:gap-8">
+        <div class="flex flex-wrap gap-2 md:max-w-sm">
+          {
+            tags.map((tag) => (
+              <span class="rounded-full bg-stone-50/15 px-4 py-2 text-lg font-bold text-stone-50 sm:text-xl">
+                {tag}
+              </span>
+            ))
+          }
+        </div>
+        <p class="max-w-xl text-sm text-stone-100/90 sm:text-base md:text-lg">
+          {description}
+        </p>
+      </div>
     </div>
   </div>
 </header>
